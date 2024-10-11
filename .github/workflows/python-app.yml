@@ -40,3 +40,6 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
+    - name: Make Test
+      run: |
+        make test
