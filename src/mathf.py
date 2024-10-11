@@ -1,4 +1,11 @@
+# src/mathf.py
+"""
+This module contains the Mathfunc class with basic mathematical operations.
+"""
+
+
 class Mathfunc:
+    """A class for basic math functions like addition and subtraction."""
 
     def adding(a: int,b: int) -> int:
         """This is an addition math function
