@@ -43,8 +43,11 @@ jobs:
     - name: Make Test
       run: |
         make test
+
+
   test:
 
+    needs: lint
     runs-on: ubuntu-latest
 
     steps:
