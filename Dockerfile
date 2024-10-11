@@ -14,6 +14,9 @@ COPY . .
 # Run flake8 to check code quality
 RUN flake8 src tests
 
+# Run pylint to check code quality
+RUN pylint .
+
 # Run pytest to test the application
 RUN pytest tests
 

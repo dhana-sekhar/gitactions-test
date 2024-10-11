@@ -9,6 +9,7 @@ def test_add():
     """testing add func"""
     assert Mathfunc.adding(2, 3) == 5
     assert Mathfunc.adding(-245, 3) == -242
+    assert Mathfunc.adding(2, 6) == 8
 
 
 def test_sub():
