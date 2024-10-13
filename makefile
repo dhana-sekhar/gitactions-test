@@ -26,6 +26,9 @@ test:
 .PHONY: build
 build:
 	@echo "Building the project..."
+	@echo "Login to Docker"
+	docker login
+	@echo "Login successful"
 	docker build -t $(DOCKER_IMAGE) .
 	docker images |grep gitaction
 	docker push $(DOCKER_IMAGE)
