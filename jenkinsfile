@@ -1,0 +1,46 @@
+pipeline{
+    agent any
+            stages{
+                stage("Frist Stage"){
+                    steps{
+                        echo "Hi, This is first stage"
+                    }
+                }
+                stage("Second Stage"){
+                    steps{
+                        echo "kindly experience the input"
+                        input("do you want to proceed further")
+                    }
+                }
+                stage("Thrid Stage"){
+                    when{
+                        not{
+                            branch "master"
+                        }
+                    }
+                    steps{
+                        echo "This is not Master"
+                    }
+                }
+                stage("Fourth Stage"){
+                    parallel{
+                        stage("Unit Test"){
+                            steps{
+                                echo "Running Unit Tests....."
+                            }
+                        }
+                        stage("Integration Test"){
+                            agent{
+                                docker{
+                                    reuseNode false
+                                    image 'ubuntu'
+                                }
+                            }
+                            steps{
+                                echo "Running the integration test..........."
+                            }
+                        }
+                    }
+                }
+            }
+}
