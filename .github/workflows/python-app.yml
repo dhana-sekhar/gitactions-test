@@ -68,7 +68,8 @@ jobs:
   docker-build:
 
     needs: test
-    runs-on: ubuntu-latest
+    # runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Git Checkout
         uses: actions/checkout@v4
